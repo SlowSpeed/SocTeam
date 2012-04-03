@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_contact" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="21dp"
+            android:paddingTop="7dp"
+            android:src="@drawable/logo_small" />
+
+        <TextView
+            style="@style/ContactHeadlineStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:paddingTop="7dp"
+            android:text="צור קשר" />
+    </FrameLayout>
+
+    <TextView
+        style="@style/ContactTextBoldStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\nיש לכם מה לומר לנו, להגיב, להציע, לשאול? \n\n רוצים לשתף אותנו במשהו?" />
+
+    <TextView
+        style="@style/ContactTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="צרו איתנו קשר טלפוני או דרך מייל:\n" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btnMail"
+            style="@style/btnMain_textStyle"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="7dp"
+            android:background="@drawable/selector_button"
+            android:gravity="center"
+            android:text="שלח דואל למערכת" />
+
+        <ImageView
+            android:id="@+id/btnMail_leftArrow"
+            style="@style/ContentImage"
+            android:layout_alignBottom="@id/btnMail"
+            android:layout_alignLeft="@id/btnMail"
+            android:layout_alignTop="@id/btnMail"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/button_arrow_left" />
+
+        <ImageView
+            android:id="@+id/btnMail_mailIcon"
+            style="@style/ContentImage"
+            android:layout_alignBottom="@id/btnMail"
+            android:layout_alignRight="@id/btnMail"
+            android:layout_alignTop="@id/btnMail"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/email" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btnPhone"
+            style="@style/btnMain_textStyle"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="7dp"
+            android:background="@drawable/selector_button"
+            android:gravity="center"
+            android:text="צור קשר טלפוני" />
+
+        <ImageView
+            android:id="@+id/btnPhone_leftArrow"
+            style="@style/ContentImage"
+            android:layout_alignBottom="@id/btnPhone"
+            android:layout_alignLeft="@id/btnPhone"
+            android:layout_alignTop="@id/btnPhone"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/button_arrow_left" />
+
+        <ImageView
+            android:id="@+id/btnPhone_phoneIcon"
+            style="@style/ContentImage"
+            android:layout_alignBottom="@id/btnPhone"
+            android:layout_alignRight="@id/btnPhone"
+            android:layout_alignTop="@id/btnPhone"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/phone" />
+    </RelativeLayout>
+
+</LinearLayout>

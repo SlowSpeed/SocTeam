@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_playlist" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="21dp"
+            android:paddingTop="7dp"
+            android:src="@drawable/logo_small" />
+
+        <TextView
+            style="@style/PlaylistHeadlineStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:paddingTop="7dp"
+            android:text="לוח שידורים" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_days"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal" >
+
+            <com.socteam.extend.Tab
+                android:id="@+id/playlist_day7"
+                style="@style/PlaylistDaysStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/selector_playlist_button"
+                android:text="ש" />
+
+            <com.socteam.extend.Tab
+                android:id="@+id/playlist_day6"
+                style="@style/PlaylistDaysStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/selector_playlist_button"
+                android:text="ו" />
+
+            <com.socteam.extend.Tab
+                android:id="@+id/playlist_day5"
+                style="@style/PlaylistDaysStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/selector_playlist_button"
+                android:text="ה" />
+
+            <com.socteam.extend.Tab
+                android:id="@+id/playlist_day4"
+                style="@style/PlaylistDaysStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/selector_playlist_button"
+                android:text="ד" />
+
+            <com.socteam.extend.Tab
+                android:id="@+id/playlist_day3"
+                style="@style/PlaylistDaysStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/selector_playlist_button"
+                android:text="ג" />
+
+            <com.socteam.extend.Tab
+                android:id="@+id/playlist_day2"
+                style="@style/PlaylistDaysStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/selector_playlist_button"
+                android:text="ב" />
+
+            <com.socteam.extend.Tab
+                android:id="@+id/playlist_day1"
+                style="@style/PlaylistDaysStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/selector_playlist_button"
+                android:text="א" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/playlist_programs_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    </FrameLayout>
+
+</LinearLayout>

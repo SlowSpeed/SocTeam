@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="7dp" >
+
+    <Button
+        android:id="@+id/btnMain"
+        style="@style/btnMain_textStyle"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/selector_button"
+        android:text="@string/main_button_text" />
+
+    <ImageView
+        android:id="@+id/btnMain_leftArrow"
+        style="@style/ContentImage"
+        android:layout_alignBottom="@id/btnMain"
+        android:layout_alignLeft="@id/btnMain"
+        android:layout_alignTop="@id/btnMain"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/button_arrow_left" />
+
+    <ImageView
+        android:id="@+id/btnMain_tvIcon"
+        style="@style/ContentImage"
+        android:layout_alignBottom="@id/btnMain"
+        android:layout_alignRight="@id/btnMain"
+        android:layout_alignTop="@id/btnMain"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="14dp"
+        android:src="@drawable/tv_icon" />
+
+    <ImageView
+        android:id="@+id/bgMain"
+        style="@style/ContentImage"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/btnMain"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_main" />
+
+    <ImageView
+        android:id="@+id/mainLogo"
+        style="@style/ContentImage"
+        android:layout_alignTop="@id/bgMain"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/bgNowPlaying"
+        style="@style/ContentImage"
+        android:layout_alignBottom="@id/bgMain"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_now" />
+
+    <ImageView
+        android:id="@+id/nowPlaying_headline"
+        style="@style/ContentImage"
+        android:layout_alignTop="@id/bgNowPlaying"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3dp"
+        android:src="@drawable/now_playing_text" />
+
+    <TextView
+        android:id="@+id/nowPlaying_programName"
+        style="@style/nowPlaying_programName_textStyle"
+        android:layout_below="@id/nowPlaying_headline"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:id="@+id/nowPlaying_programWith"
+        style="@style/nowPlaying_programWith_textStyle"
+        android:layout_below="@id/nowPlaying_programName"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/power"
+        style="@style/ContentImage"
+        android:layout_alignTop="@id/bgNowPlaying"
+        android:layout_toRightOf="@id/bgNowPlaying"
+        android:src="@drawable/selector_power" />
+
+    <ImageView
+        android:id="@+id/mainInfo"
+        style="@style/ContentImage"
+        android:layout_below="@id/power"
+        android:layout_toRightOf="@id/bgNowPlaying"
+        android:src="@drawable/selector_info" />
+
+    <ImageView
+        android:id="@+id/air"
+        style="@style/ContentImage"
+        android:layout_below="@id/mainInfo"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/bgNowPlaying"
+        android:src="@drawable/selector_air" />
+
+    <com.socteam.extend.VerticalSeekBar
+        android:id="@+id/volume_slider"
+        style="@style/ContentImage"
+        android:layout_alignTop="@id/mainLogo"
+        android:layout_alignBottom="@id/bgNowPlaying"
+        android:layout_marginLeft="14dp"
+        android:progressDrawable="@drawable/line_volume_slider"
+        android:thumb="@drawable/volume_slider_side" />
+
+</RelativeLayout>

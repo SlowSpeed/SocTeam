@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:keepScreenOn="true" >
+
+    <ImageView
+        android:id="@+id/tabBG"
+        style="@style/TabBarStyle"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/bg_tab_bar" />
+
+    <com.socteam.extend.Tab
+        android:id="@+id/tabRadio"
+        style="@style/TabTextUnselectedStyle"
+        android:layout_alignRight="@id/tabBG"
+        android:layout_alignTop="@id/tabBG"
+        android:background="@drawable/selector_now_playing"
+        android:text="@string/tab_now_playing_string" />
+
+    <ImageView
+        android:id="@+id/seperator1"
+        style="@style/TabSeperatorStyle"
+        android:layout_alignTop="@id/tabRadio"
+        android:layout_toLeftOf="@id/tabRadio"
+        android:src="@drawable/seperator" />
+
+    <com.socteam.extend.Tab
+        android:id="@+id/tabProgram"
+        style="@style/TabTextUnselectedStyle"
+        android:layout_alignTop="@id/tabRadio"
+        android:layout_toLeftOf="@id/seperator1"
+        android:background="@drawable/selector_cast"
+        android:text="@string/tab_program_list_string" />
+
+    <ImageView
+        android:id="@+id/seperator2"
+        style="@style/TabSeperatorStyle"
+        android:layout_alignTop="@id/tabProgram"
+        android:layout_toLeftOf="@id/tabProgram"
+        android:src="@drawable/seperator" />
+
+    <com.socteam.extend.Tab
+        android:id="@+id/tabYoutube"
+        style="@style/TabTextUnselectedStyle"
+        android:layout_alignTop="@id/tabProgram"
+        android:layout_toLeftOf="@id/seperator2"
+        android:background="@drawable/selector_youtube"
+        android:text="@string/tab_youtube_string" />
+
+    <ImageView
+        android:id="@+id/seperator3"
+        style="@style/TabSeperatorStyle"
+        android:layout_alignTop="@id/tabYoutube"
+        android:layout_toLeftOf="@id/tabYoutube"
+        android:src="@drawable/seperator" />
+
+    <com.socteam.extend.Tab
+        android:id="@+id/tabFacebook"
+        style="@style/TabTextUnselectedStyle"
+        android:layout_alignTop="@id/tabYoutube"
+        android:layout_toLeftOf="@id/seperator3"
+        android:background="@drawable/selector_facebook"
+        android:text="@string/tab_facebook_string" />
+
+    <ImageView
+        android:id="@+id/seperator4"
+        style="@style/TabSeperatorStyle"
+        android:layout_alignTop="@id/tabFacebook"
+        android:layout_toLeftOf="@id/tabFacebook"
+        android:src="@drawable/seperator" />
+
+    <com.socteam.extend.Tab
+        android:id="@+id/tabContactUs"
+        style="@style/TabTextUnselectedStyle"
+        android:layout_alignLeft="@id/tabBG"
+        android:layout_alignTop="@id/tabFacebook"
+        android:layout_toLeftOf="@id/seperator4"
+        android:background="@drawable/selector_contact_us"
+        android:text="@string/tab_contact_us_string" />
+
+    <ImageView
+        android:id="@+id/mainBanner"
+        style="@style/MainBannerStyle"
+        android:layout_above="@id/tabBG" />
+
+    <FrameLayout
+        android:id="@+id/tabContent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/mainBanner"
+        android:background="@drawable/bg" />
+
+</RelativeLayout>
