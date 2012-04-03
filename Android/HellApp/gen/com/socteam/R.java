@@ -152,10 +152,11 @@ public final class R {
         public static final int playlist_list=0x7f030002;
         public static final int playlist_row=0x7f030003;
         public static final int playlist_tab_content=0x7f030004;
-        public static final int tab_content_now_playing=0x7f030005;
-        public static final int terms_layout=0x7f030006;
-        public static final int video_layout=0x7f030007;
-        public static final int web_tab_content=0x7f030008;
+        public static final int pre_main=0x7f030005;
+        public static final int tab_content_now_playing=0x7f030006;
+        public static final int terms_layout=0x7f030007;
+        public static final int video_layout=0x7f030008;
+        public static final int web_tab_content=0x7f030009;
     }
     public static final class string {
         public static final int NO=0x7f04001a;

@@ -12,8 +12,11 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -46,6 +49,16 @@ public class Radio102fm_MainActivity extends Activity
 		showBanner();
 	}
 	
+	/** Check whether there's a connection to the Internet
+	 * @return True if there's a connection to the Internet, false otherwise */
+	public boolean isNetworkAvailable()
+	{
+		ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		
+		NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+		return activeNetworkInfo != null;
+	}
+	
 	@Override
 	protected void onResume()
 	{
@@ -63,14 +76,13 @@ public class Radio102fm_MainActivity extends Activity
 			
 			alertBox.setMessage(R.string.SetInBackgroundTextString);
 			
-			alertBox.setPositiveButton(R.string.YES,
-					new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(DialogInterface dialog, int which)
-						{
-							Radio102fm_MainActivity.super.onBackPressed();
-						}
-					});
+			alertBox.setPositiveButton(R.string.YES, new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which)
+				{
+					Radio102fm_MainActivity.super.onBackPressed();
+				}
+			});
 			
 			alertBox.setNegativeButton(R.string.NO, new DialogInterface.OnClickListener() {
 				@Override
@@ -103,7 +115,7 @@ public class Radio102fm_MainActivity extends Activity
 		WebView webTabBrowser = new WebView(this);
 		webTabBrowser.setWebViewClient(new WebViewClient());
 		webTabBrowser.loadUrl(getString(R.string.about_url));
-
+		
 		alertBox.setView(webTabBrowser);
 		alertBox.show();
 		return true;
@@ -177,7 +189,8 @@ public class Radio102fm_MainActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				Toast.makeText(Radio102fm_MainActivity.this, "inBackClick", Toast.LENGTH_SHORT).show();
+				Toast.makeText(Radio102fm_MainActivity.this, "inBackClick", Toast.LENGTH_SHORT)
+						.show();
 				if (webTabBrowser.canGoBack())
 				{
 					webTabBrowser.goBack();
@@ -191,7 +204,8 @@ public class Radio102fm_MainActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				Toast.makeText(Radio102fm_MainActivity.this, "inForwClick", Toast.LENGTH_SHORT).show();
+				Toast.makeText(Radio102fm_MainActivity.this, "inForwClick", Toast.LENGTH_SHORT)
+						.show();
 				if (webTabBrowser.canGoForward())
 				{
 					Toast.makeText(Radio102fm_MainActivity.this, "inForwClick_wentForw",
@@ -215,7 +229,8 @@ public class Radio102fm_MainActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				Toast.makeText(Radio102fm_MainActivity.this, "inStopClick", Toast.LENGTH_SHORT).show();
+				Toast.makeText(Radio102fm_MainActivity.this, "inStopClick", Toast.LENGTH_SHORT)
+						.show();
 				webTabBrowser.stopLoading();
 			}
 		});
@@ -232,12 +247,14 @@ public class Radio102fm_MainActivity extends Activity
 			{
 				/* Create the Intent */
 				final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-
+				
 				/* Fill it with Data */
 				emailIntent.setType("plain/text");
-				emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"102fm@mediacast.co.il"});
-				emailIntent.putExtra(android.content.Intent.EXTRA_CC, new String[]{"telaviv102fm@gmail.com"});
-
+				emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
+						new String[] { "102fm@mediacast.co.il" });
+				emailIntent.putExtra(android.content.Intent.EXTRA_CC,
+						new String[] { "telaviv102fm@gmail.com" });
+				
 				/* Send it off to the Activity-Chooser */
 				startActivity(emailIntent);
 			}
@@ -251,8 +268,8 @@ public class Radio102fm_MainActivity extends Activity
 			public void onClick(View v)
 			{
 				Intent callIntent = new Intent(Intent.ACTION_CALL);
-		        callIntent.setData(Uri.parse(getString(R.string.phone_intent)));
-		        startActivity(callIntent);
+				callIntent.setData(Uri.parse(getString(R.string.phone_intent)));
+				startActivity(callIntent);
 			}
 		};
 		contactTabContent.findViewById(R.id.btnPhone).setOnClickListener(phoneClick);
@@ -319,8 +336,8 @@ public class Radio102fm_MainActivity extends Activity
 									R.layout.playlist_list, null);
 							
 							RadioProgram[] itemList = new RadioProgram[weekDay.size()];
-							PlaylistAdapter adapter = new PlaylistAdapter(Radio102fm_MainActivity.this,
-									R.layout.playlist_row, itemList);
+							PlaylistAdapter adapter = new PlaylistAdapter(
+									Radio102fm_MainActivity.this, R.layout.playlist_row, itemList);
 							
 							int itemListIdx = 0;
 							
