@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import com.socteam.R;
 import com.socteam.extend.VerticalSeekBar;
-import com.socteam.radio102fm.Radio102fm_Activity;
+import com.socteam.radio102fm.Radio102fm_MainActivity;
 import com.socteam.radio102fm.Radio102fm_Service;
 import com.socteam.radio102fm.Radio102fm_VideoActivity;
 import com.socteam.radio102fm.Radio102fm_ServerAPI.RadioProgram;
@@ -26,7 +26,7 @@ public final class TabContent_NowPlaying
 	private static Intent s_videoActivityIntent;
 	private static int s_nowPlayingTextRefreshTime = (60 * 60 * 1000);// 1 min
 	
-	public static View getNowPlayingTabContent(final Radio102fm_Activity activity)
+	public static View getNowPlayingTabContent(final Radio102fm_MainActivity activity)
 	{
 		View nowPlayingTabContent = activity.getLayoutInflater().inflate(
 				R.layout.tab_content_now_playing, null);
@@ -40,7 +40,7 @@ public final class TabContent_NowPlaying
 		return nowPlayingTabContent;
 	}
 	
-	private static void handlePowerAndAirButton(final Radio102fm_Activity activity,
+	private static void handlePowerAndAirButton(final Radio102fm_MainActivity activity,
 			final View nowPlayingTabContent)
 	{
 		// gets the power button from the layout
@@ -66,7 +66,7 @@ public final class TabContent_NowPlaying
 				}
 				else
 				{
-					if (!Radio102fm_Activity.ServerAPI.isConnected())
+					if (!Radio102fm_MainActivity.ServerAPI.isConnected())
 					{
 						AlertDialog.Builder builder = new Builder(activity);
 						builder.setMessage(R.string.no_internet_connection_msg);
@@ -86,7 +86,7 @@ public final class TabContent_NowPlaying
 		});
 	}
 	
-	private static void handleInfoButton(final Radio102fm_Activity activity,
+	private static void handleInfoButton(final Radio102fm_MainActivity activity,
 			final View nowPlayingTabContent)
 	{
 		View btnInfo = nowPlayingTabContent.findViewById(R.id.mainInfo);
@@ -113,7 +113,7 @@ public final class TabContent_NowPlaying
 		});
 	}
 	
-	private static void handleVideoAndArrowAndTvButton(final Radio102fm_Activity activity,
+	private static void handleVideoAndArrowAndTvButton(final Radio102fm_MainActivity activity,
 			final View nowPlayingTabContent)
 	{
 		// gets the video button from the layout
@@ -139,7 +139,7 @@ public final class TabContent_NowPlaying
 		nowPlayingTabContent.findViewById(R.id.btnMain_tvIcon).setOnClickListener(viewVideo);
 	}
 	
-	private static void handleVolumeBar(final Radio102fm_Activity activity,
+	private static void handleVolumeBar(final Radio102fm_MainActivity activity,
 			final View nowPlayingTabContent)
 	{
 		VerticalSeekBar volumeBar = (VerticalSeekBar) nowPlayingTabContent
@@ -164,16 +164,16 @@ public final class TabContent_NowPlaying
 		});
 	}
 	
-	private static void handleNowPlayingText(final Radio102fm_Activity activity,
+	private static void handleNowPlayingText(final Radio102fm_MainActivity activity,
 			final View nowPlayingTabContent)
 	{
 		activity.UIHandler.post(new Runnable() {
 			@Override
 			public void run()
 			{
-				if (Radio102fm_Activity.ServerAPI != null)
+				if (Radio102fm_MainActivity.ServerAPI != null)
 				{
-					RadioProgram prog = Radio102fm_Activity.ServerAPI.getCurrentProgram();
+					RadioProgram prog = Radio102fm_MainActivity.ServerAPI.getCurrentProgram();
 					((TextView) nowPlayingTabContent.findViewById(R.id.nowPlaying_programName))
 							.setText(prog.getName());
 					((TextView) nowPlayingTabContent.findViewById(R.id.nowPlaying_programWith))
@@ -187,17 +187,17 @@ public final class TabContent_NowPlaying
 	
 	/* if an existing intent exists: return it
 	 * else create a new one and return it */
-	public static Intent getRadioServiceIntent(final Radio102fm_Activity activity)
+	public static Intent getRadioServiceIntent(final Radio102fm_MainActivity activity)
 	{
 		if (s_radioServiceIntent != null) return s_radioServiceIntent;
 		
-		return s_radioServiceIntent = new Intent("", Uri.parse(Radio102fm_Activity.ServerAPI
+		return s_radioServiceIntent = new Intent("", Uri.parse(Radio102fm_MainActivity.ServerAPI
 				.getRadioStreamUrl()), activity, Radio102fm_Service.class);
 	}
 	
 	/* if an existing intent exists: return it
 	 * else create a new one and return it */
-	private static Intent getVideoActivityIntent(final Radio102fm_Activity activity)
+	private static Intent getVideoActivityIntent(final Radio102fm_MainActivity activity)
 	{
 		if (s_videoActivityIntent != null) return s_videoActivityIntent;
 		
@@ -205,11 +205,11 @@ public final class TabContent_NowPlaying
 	}
 	
 	/* sets the audio volume to that of the SeekBar */
-	private static void setVolumeBySeekBar(Radio102fm_Activity activity, SeekBar seekBar)
+	private static void setVolumeBySeekBar(Radio102fm_MainActivity activity, SeekBar seekBar)
 	{
 		// gets the audio service
 		AudioManager audio = (AudioManager) activity
-				.getSystemService(Radio102fm_Activity.AUDIO_SERVICE);
+				.getSystemService(Radio102fm_MainActivity.AUDIO_SERVICE);
 		
 		// gets the max volume
 		int maxVolume = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
@@ -220,11 +220,11 @@ public final class TabContent_NowPlaying
 	}
 	
 	/* sets the audio volume to that of the SeekBar */
-	private static void setSeekBarByVolume(Radio102fm_Activity activity, SeekBar seekBar)
+	private static void setSeekBarByVolume(Radio102fm_MainActivity activity, SeekBar seekBar)
 	{
 		// gets the audio service
 		AudioManager audio = (AudioManager) activity
-				.getSystemService(Radio102fm_Activity.AUDIO_SERVICE);
+				.getSystemService(Radio102fm_MainActivity.AUDIO_SERVICE);
 		
 		// gets the max volume
 		int maxVolume = seekBar.getMax();

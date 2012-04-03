@@ -29,9 +29,9 @@ public class Radio102fm_VideoActivity extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.video_layout);
 
-		m_videoUrl = Radio102fm_Activity.ServerAPI.getVideoStreamUrl();
+		m_videoUrl = Radio102fm_MainActivity.ServerAPI.getVideoStreamUrl();
 		final ImageView bannerView = (ImageView) findViewById(R.id.bannerView);
-		bannerView.setImageBitmap(Radio102fm_Activity.ServerAPI.getBanner(false).getImage());
+		bannerView.setImageBitmap(Radio102fm_MainActivity.ServerAPI.getBanner(false).getImage());
 
 		m_myView = (VideoView) findViewById(R.id.videoView);
 

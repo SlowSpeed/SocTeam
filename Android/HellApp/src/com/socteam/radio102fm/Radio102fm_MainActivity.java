@@ -27,7 +27,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class Radio102fm_Activity extends Activity
+public class Radio102fm_MainActivity extends Activity
 {
 	public static Radio102fm_ServerAPI ServerAPI;
 	public Handler UIHandler;
@@ -68,7 +68,7 @@ public class Radio102fm_Activity extends Activity
 						@Override
 						public void onClick(DialogInterface dialog, int which)
 						{
-							Radio102fm_Activity.super.onBackPressed();
+							Radio102fm_MainActivity.super.onBackPressed();
 						}
 					});
 			
@@ -77,9 +77,9 @@ public class Radio102fm_Activity extends Activity
 				public void onClick(DialogInterface dialog, int which)
 				{
 					stopService(TabContent_NowPlaying
-							.getRadioServiceIntent(Radio102fm_Activity.this));
+							.getRadioServiceIntent(Radio102fm_MainActivity.this));
 					
-					Radio102fm_Activity.super.onBackPressed();
+					Radio102fm_MainActivity.super.onBackPressed();
 				}
 			});
 			
@@ -114,7 +114,7 @@ public class Radio102fm_Activity extends Activity
 		final Radio102fm_ServerAPI.BannerInfo bannerInfo = ServerAPI.getBanner(true);
 		if (bannerInfo != null)
 		{
-			ImageView bannerView = (ImageView) Radio102fm_Activity.this
+			ImageView bannerView = (ImageView) Radio102fm_MainActivity.this
 					.findViewById(R.id.mainBanner);
 			bannerView.setImageBitmap(bannerInfo.getImage());
 			bannerView.setOnClickListener(new OnClickListener() {
@@ -177,11 +177,11 @@ public class Radio102fm_Activity extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				Toast.makeText(Radio102fm_Activity.this, "inBackClick", Toast.LENGTH_SHORT).show();
+				Toast.makeText(Radio102fm_MainActivity.this, "inBackClick", Toast.LENGTH_SHORT).show();
 				if (webTabBrowser.canGoBack())
 				{
 					webTabBrowser.goBack();
-					Toast.makeText(Radio102fm_Activity.this, "inBackClick_wentBack",
+					Toast.makeText(Radio102fm_MainActivity.this, "inBackClick_wentBack",
 							Toast.LENGTH_SHORT).show();
 				}
 			}
@@ -191,10 +191,10 @@ public class Radio102fm_Activity extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				Toast.makeText(Radio102fm_Activity.this, "inForwClick", Toast.LENGTH_SHORT).show();
+				Toast.makeText(Radio102fm_MainActivity.this, "inForwClick", Toast.LENGTH_SHORT).show();
 				if (webTabBrowser.canGoForward())
 				{
-					Toast.makeText(Radio102fm_Activity.this, "inForwClick_wentForw",
+					Toast.makeText(Radio102fm_MainActivity.this, "inForwClick_wentForw",
 							Toast.LENGTH_SHORT).show();
 					webTabBrowser.goForward();
 				}
@@ -205,7 +205,7 @@ public class Radio102fm_Activity extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				Toast.makeText(Radio102fm_Activity.this, "inReloadClick", Toast.LENGTH_SHORT)
+				Toast.makeText(Radio102fm_MainActivity.this, "inReloadClick", Toast.LENGTH_SHORT)
 						.show();
 				webTabBrowser.reload();
 			}
@@ -215,7 +215,7 @@ public class Radio102fm_Activity extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				Toast.makeText(Radio102fm_Activity.this, "inStopClick", Toast.LENGTH_SHORT).show();
+				Toast.makeText(Radio102fm_MainActivity.this, "inStopClick", Toast.LENGTH_SHORT).show();
 				webTabBrowser.stopLoading();
 			}
 		});
@@ -319,7 +319,7 @@ public class Radio102fm_Activity extends Activity
 									R.layout.playlist_list, null);
 							
 							RadioProgram[] itemList = new RadioProgram[weekDay.size()];
-							PlaylistAdapter adapter = new PlaylistAdapter(Radio102fm_Activity.this,
+							PlaylistAdapter adapter = new PlaylistAdapter(Radio102fm_MainActivity.this,
 									R.layout.playlist_row, itemList);
 							
 							int itemListIdx = 0;

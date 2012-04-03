@@ -44,7 +44,7 @@ public class Radio102fm_Service extends Service
 				Context context = getApplicationContext();
 				CharSequence contentTitle = notif_text;
 				CharSequence contentText = getText(R.string.notif_subtext);
-				Intent notificationIntent = new Intent(Radio102fm_Service.this, Radio102fm_Activity.class);
+				Intent notificationIntent = new Intent(Radio102fm_Service.this, Radio102fm_MainActivity.class);
 				PendingIntent contentIntent = PendingIntent.getActivity(Radio102fm_Service.this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
 				notif.setLatestEventInfo(context, contentTitle, contentText, contentIntent);

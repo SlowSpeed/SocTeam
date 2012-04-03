@@ -14,7 +14,7 @@
         android:icon="@drawable/logo"
         android:label="@string/app_name" android:theme="@android:style/Theme.Black.NoTitleBar">
         <activity
-            android:name=".radio102fm.Radio102fm_Activity"
+            android:name=".radio102fm.Radio102fm_MainActivity"
             android:label="@string/app_name" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
