@@ -318,7 +318,7 @@ public class Radio102fm_MainActivity extends Activity
 				
 				if (days != null)
 				{
-					TabGroup week = new TabGroup(
+					final TabGroup week = new TabGroup(
 							(FrameLayout) retVal.findViewById(R.id.playlist_programs_layout));
 					
 					Tab dayTab;
@@ -380,9 +380,16 @@ public class Radio102fm_MainActivity extends Activity
 						}
 					}
 					
-					Tab defaultTab = ((Tab) retVal.findViewById(R.id.playlist_day1));
-					week.tabPressed(defaultTab);
-					defaultTab.setPressed();
+					UIHandler.post(new Runnable()
+					{
+						@Override
+						public void run()
+						{
+							Tab defaultTab = ((Tab) retVal.findViewById(R.id.playlist_day1));
+							week.tabPressed(defaultTab);
+							defaultTab.setPressed();
+						}
+					});
 				}
 			}
 		}).start();

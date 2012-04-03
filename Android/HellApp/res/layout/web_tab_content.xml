@@ -16,8 +16,13 @@
             android:layout_width="25dp"
             android:layout_height="fill_parent"
             android:layout_alignParentLeft="true"
+<<<<<<< HEAD
             android:layout_marginLeft="15dp"
             android:layout_marginRight="45dp"
+=======
+            android:layout_marginRight="45dp"
+            android:layout_marginLeft="15dp"
+>>>>>>> ed0d3e29746ce96687723b54cf4aaa293a08ffee
             android:src="@drawable/selector_web_back" />
 
         <ImageView
@@ -32,17 +37,28 @@
             android:layout_width="25dp"
             android:layout_height="fill_parent"
             android:layout_alignParentRight="true"
+<<<<<<< HEAD
             android:layout_marginLeft="45dp"
             android:layout_marginRight="15dp"
             android:src="@drawable/selector_web_cancel" />
 
+=======
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="45dp"
+            android:src="@drawable/selector_web_cancel" />
+        
+>>>>>>> ed0d3e29746ce96687723b54cf4aaa293a08ffee
         <ImageView
             android:id="@+id/webViewMenu_refresh"
             android:layout_width="25dp"
             android:layout_height="fill_parent"
             android:layout_toLeftOf="@id/webViewMenu_cancel"
             android:src="@drawable/selector_web_refresh" />
+<<<<<<< HEAD
     </RelativeLayout>
+=======
+</RelativeLayout>
+>>>>>>> ed0d3e29746ce96687723b54cf4aaa293a08ffee
 
     <WebView
         android:id="@+id/webViewBrowser"

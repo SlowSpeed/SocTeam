@@ -341,6 +341,39 @@ public class Radio102fm_ServerAPI
 		return m_isConnected;
 	}
 	
+	/** Get image from a url
+	 * @param imageUrl
+	 * The url of the image to get
+	 * @return A bitmap image */
+	public Bitmap getImage(String imageUrl)
+	{
+		Bitmap retVal = null;
+		
+		try
+		{
+			// Get the image web page
+			HttpResponse imageContent = getResponse(imageUrl);
+			
+			// If the image exists
+			if (imageContent != null)
+			{
+				// Create a bitmap image from the web page
+				retVal = BitmapFactory.decodeStream(imageContent.getEntity().getContent());
+			}
+			else
+			{
+				// TODO remove!!!
+				Toast.makeText(m_context, "Can't get banner image", Toast.LENGTH_LONG);
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return retVal;
+	}
+	
 	/* ******************* Private Methods ************************ */
 	
 	/** Refreshing both of the banners' info */
@@ -406,39 +439,6 @@ public class Radio102fm_ServerAPI
 			{
 				Log.e("getBannerInfo", "xmlMaleFormed: " + xmlString);
 			}
-		}
-		
-		return retVal;
-	}
-	
-	/** Get image from a url
-	 * @param imageUrl
-	 * The url of the image to get
-	 * @return A bitmap image */
-	private Bitmap getImage(String imageUrl)
-	{
-		Bitmap retVal = null;
-		
-		try
-		{
-			// Get the image web page
-			HttpResponse imageContent = getResponse(imageUrl);
-			
-			// If the image exists
-			if (imageContent != null)
-			{
-				// Create a bitmap image from the web page
-				retVal = BitmapFactory.decodeStream(imageContent.getEntity().getContent());
-			}
-			else
-			{
-				// TODO remove!!!
-				Toast.makeText(m_context, "Can't get banner image", Toast.LENGTH_LONG);
-			}
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
 		}
 		
 		return retVal;

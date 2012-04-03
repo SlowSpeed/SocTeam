@@ -52,7 +52,7 @@ public class PlaylistAdapter extends ArrayAdapter<RadioProgram>
 		RadioProgram program = data[position];
 		holder.programTime.setText(program.getTimeString());
 		holder.programName.setText(program.getName());
-		holder.broadcaster.setText("тн: " + program.getBroadcaster());
+		holder.broadcaster.setText(context.getString(R.string.WITH) + ": " + program.getBroadcaster());
 
 		return row;
 	}
