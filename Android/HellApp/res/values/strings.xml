@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Radio102fm</string>
+    <string name="notif_ticker_text">רדיו 102fm מנגן עכשיו ברקע!</string>
+    <string name="notif_subtext">לחץ כאן לחזור לאפליקציה</string>
+    <string name="SetInBackgroundTextString">האם להמשיך את ניגון הרדיו ברקע?</string>
+    <string name="api_serverAddress">http://andro.mediacast.co.il/api/</string>
+    <string name="api_banner">banner?</string>
+    <string name="api_sid">sid=1002</string>
+    <string name="api_bannerType">&amp;type=</string>
+    <string name="api_appActivation">app_activation?</string>
+    <string name="api_bannerClicked">click_banner?</string>
+    <string name="api_bannerId">&amp;bannerId=</string>
+    <string name="api_streams">streams?</string>
+	<string name="api_schedule">programs?</string>
+	<string name="api_scheduleVer">&amp;schedule_ver=0.0</string>
+	<string name="api_currProgram">program_info?</string>
+	<string name="onexit_stop_radio_yes">כן</string>
+	<string name="onexit_stop_radio_no">לא</string>
+	<string name="tab_now_playing_string">עכשיו ברדיו</string>
+	<string name="main_button_text">לצפייה בשידור החי</string>
+	<string name="tab_program_list_string">לוח שידורים</string>
+	<string name="tab_youtube_string">יו-טיוב</string>
+	<string name="tab_facebook_string">פייסבוק</string>
+	<string name="tab_contact_us_string">צור קשר</string>
+	<string name="no_internet_connection_msg">לא ניתן להתחבר לשרת\n בבקשה בדוק את חיבור האנטרנט שלך</string>
+	<string name="OK">אישור</string>
+	<string name="YES">כן</string>
+	<string name="NO">לא</string>
+	<string name="about_url">http://andro.mediacast.co.il/about_us/1002-2.html</string>
+	<string name="terms_url">http://andro.mediacast.co.il/about_us/1002.html</string>
+	<string name="phone_intent">tel:1900720102</string>
+	<string name="preMain_Url">http://web1.mediacast.co.il/loader/loading.html</string>
+</resources>

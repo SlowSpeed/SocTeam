@@ -39,14 +39,32 @@ public class Radio102fm_MainActivity extends Activity
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		setContentView(R.layout.pre_main);
+		WebView premain = (WebView) findViewById(R.id.preMainView);
+		premain.getSettings().setJavaScriptEnabled(true);
+		premain.loadUrl(getString(R.string.preMain_Url));
 		
-		ServerAPI = new Radio102fm_ServerAPI(this);
 		UIHandler = new Handler();
 		
-		findViewById(R.id.mainLayout).setKeepScreenOn(isRadioPlaying());
-		InitTabMenu();
-		showBanner();
+		UIHandler.postDelayed(new Runnable() {
+			@Override
+			public void run()
+			{
+				Init();
+			}
+		}, 500);
+	}
+	
+	public void Init()
+	{
+		ServerAPI = new Radio102fm_ServerAPI(this);
+		
+		View main = getLayoutInflater().inflate(R.layout.main, null);
+		main.findViewById(R.id.mainLayout).setKeepScreenOn(isRadioPlaying());
+		InitTabMenu(main);
+		showBanner(main);
+		
+		setContentView(main);
 	}
 	
 	/** Check whether there's a connection to the Internet
@@ -65,6 +83,13 @@ public class Radio102fm_MainActivity extends Activity
 		if (ServerAPI == null) ServerAPI = new Radio102fm_ServerAPI(this);
 		
 		super.onResume();
+	}
+	
+	@Override
+	protected void onDestroy()
+	{
+		//findViewById(R.id.preMainView).destroyDrawingCache();
+		super.onDestroy();
 	}
 	
 	@Override
@@ -121,13 +146,12 @@ public class Radio102fm_MainActivity extends Activity
 		return true;
 	}
 	
-	private void showBanner()
+	private void showBanner(View main)
 	{
 		final Radio102fm_ServerAPI.BannerInfo bannerInfo = ServerAPI.getBanner(true);
 		if (bannerInfo != null)
 		{
-			ImageView bannerView = (ImageView) Radio102fm_MainActivity.this
-					.findViewById(R.id.mainBanner);
+			ImageView bannerView = (ImageView) main.findViewById(R.id.mainBanner);
 			bannerView.setImageBitmap(bannerInfo.getImage());
 			bannerView.setOnClickListener(new OnClickListener() {
 				@Override
@@ -152,9 +176,9 @@ public class Radio102fm_MainActivity extends Activity
 		return false;
 	}
 	
-	private void InitTabMenu()
+	private void InitTabMenu(View main)
 	{
-		final TabGroup tabGroup = new TabGroup((FrameLayout) findViewById(R.id.tabContent));
+		final TabGroup tabGroup = new TabGroup((FrameLayout) main.findViewById(R.id.tabContent));
 		
 		View nowPlayingTabContent = TabContent_NowPlaying.getNowPlayingTabContent(this);
 		
@@ -166,13 +190,13 @@ public class Radio102fm_MainActivity extends Activity
 		
 		View ContactTabContent = getContactTabContent();
 		
-		tabGroup.addTab((Tab) findViewById(R.id.tabRadio), nowPlayingTabContent);
-		tabGroup.addTab((Tab) findViewById(R.id.tabProgram), programTabContent);
-		tabGroup.addTab((Tab) findViewById(R.id.tabYoutube), youtubeTabContent);
-		tabGroup.addTab((Tab) findViewById(R.id.tabFacebook), facebookTabContent);// //
-		tabGroup.addTab((Tab) findViewById(R.id.tabContactUs), ContactTabContent);
+		tabGroup.addTab((Tab) main.findViewById(R.id.tabRadio), nowPlayingTabContent);
+		tabGroup.addTab((Tab) main.findViewById(R.id.tabProgram), programTabContent);
+		tabGroup.addTab((Tab) main.findViewById(R.id.tabYoutube), youtubeTabContent);
+		tabGroup.addTab((Tab) main.findViewById(R.id.tabFacebook), facebookTabContent);// //
+		tabGroup.addTab((Tab) main.findViewById(R.id.tabContactUs), ContactTabContent);
 		
-		Tab defaultTab = ((Tab) findViewById(R.id.tabRadio));
+		Tab defaultTab = ((Tab) main.findViewById(R.id.tabRadio));
 		tabGroup.tabPressed(defaultTab);
 		defaultTab.setPressed();
 	}

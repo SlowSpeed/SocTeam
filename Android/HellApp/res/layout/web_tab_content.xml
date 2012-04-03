@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/webViewContent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/webViewMenu"
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:layout_alignTop="@id/webViewContent"
+        android:background="#000000" >
+
+        <ImageView
+            android:id="@+id/webViewMenu_back"
+            android:layout_width="25dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="45dp"
+            android:src="@drawable/selector_web_back" />
+
+        <ImageView
+            android:id="@+id/webViewMenu_forward"
+            android:layout_width="25dp"
+            android:layout_height="fill_parent"
+            android:layout_toRightOf="@id/webViewMenu_back"
+            android:src="@drawable/selector_web_forward" />
+
+        <ImageView
+            android:id="@+id/webViewMenu_cancel"
+            android:layout_width="25dp"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/selector_web_cancel" />
+
+        <ImageView
+            android:id="@+id/webViewMenu_refresh"
+            android:layout_width="25dp"
+            android:layout_height="fill_parent"
+            android:layout_toLeftOf="@id/webViewMenu_cancel"
+            android:src="@drawable/selector_web_refresh" />
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/webViewBrowser"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/webViewMenu" />
+
+</RelativeLayout>

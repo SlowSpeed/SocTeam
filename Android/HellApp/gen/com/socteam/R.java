@@ -92,26 +92,26 @@ public final class R {
         public static final int white_seperator=0x7f02004e;
     }
     public static final class id {
-        public static final int air=0x7f060029;
-        public static final int bannerView=0x7f06002d;
-        public static final int bgMain=0x7f060021;
-        public static final int bgNowPlaying=0x7f060023;
+        public static final int air=0x7f06002a;
+        public static final int bannerView=0x7f06002e;
+        public static final int bgMain=0x7f060022;
+        public static final int bgNowPlaying=0x7f060024;
         public static final int btnMail=0x7f060000;
         public static final int btnMail_leftArrow=0x7f060001;
         public static final int btnMail_mailIcon=0x7f060002;
-        public static final int btnMain=0x7f06001e;
-        public static final int btnMain_leftArrow=0x7f06001f;
-        public static final int btnMain_tvIcon=0x7f060020;
+        public static final int btnMain=0x7f06001f;
+        public static final int btnMain_leftArrow=0x7f060020;
+        public static final int btnMain_tvIcon=0x7f060021;
         public static final int btnPhone=0x7f060003;
         public static final int btnPhone_leftArrow=0x7f060004;
         public static final int btnPhone_phoneIcon=0x7f060005;
         public static final int mainBanner=0x7f060011;
-        public static final int mainInfo=0x7f060028;
+        public static final int mainInfo=0x7f060029;
         public static final int mainLayout=0x7f060006;
-        public static final int mainLogo=0x7f060022;
-        public static final int nowPlaying_headline=0x7f060024;
-        public static final int nowPlaying_programName=0x7f060025;
-        public static final int nowPlaying_programWith=0x7f060026;
+        public static final int mainLogo=0x7f060023;
+        public static final int nowPlaying_headline=0x7f060025;
+        public static final int nowPlaying_programName=0x7f060026;
+        public static final int nowPlaying_programWith=0x7f060027;
         public static final int playlist_day1=0x7f06001c;
         public static final int playlist_day2=0x7f06001b;
         public static final int playlist_day3=0x7f06001a;
@@ -123,7 +123,8 @@ public final class R {
         public static final int playlist_row_broadcaster=0x7f060014;
         public static final int playlist_row_name=0x7f060013;
         public static final int playlist_row_time=0x7f060015;
-        public static final int power=0x7f060027;
+        public static final int power=0x7f060028;
+        public static final int preMainView=0x7f06001e;
         public static final int seperator1=0x7f060009;
         public static final int seperator2=0x7f06000b;
         public static final int seperator3=0x7f06000d;
@@ -135,16 +136,16 @@ public final class R {
         public static final int tabProgram=0x7f06000a;
         public static final int tabRadio=0x7f060008;
         public static final int tabYoutube=0x7f06000c;
-        public static final int termsWeb=0x7f06002b;
-        public static final int videoView=0x7f06002c;
-        public static final int volume_slider=0x7f06002a;
-        public static final int webViewBrowser=0x7f060034;
-        public static final int webViewContent=0x7f06002e;
-        public static final int webViewMenu=0x7f06002f;
-        public static final int webViewMenu_back=0x7f060030;
-        public static final int webViewMenu_cancel=0x7f060032;
-        public static final int webViewMenu_forward=0x7f060031;
-        public static final int webViewMenu_refresh=0x7f060033;
+        public static final int termsWeb=0x7f06002c;
+        public static final int videoView=0x7f06002d;
+        public static final int volume_slider=0x7f06002b;
+        public static final int webViewBrowser=0x7f060035;
+        public static final int webViewContent=0x7f06002f;
+        public static final int webViewMenu=0x7f060030;
+        public static final int webViewMenu_back=0x7f060031;
+        public static final int webViewMenu_cancel=0x7f060033;
+        public static final int webViewMenu_forward=0x7f060032;
+        public static final int webViewMenu_refresh=0x7f060034;
     }
     public static final class layout {
         public static final int contact_tab_content=0x7f030000;
@@ -183,6 +184,7 @@ public final class R {
         public static final int onexit_stop_radio_no=0x7f040010;
         public static final int onexit_stop_radio_yes=0x7f04000f;
         public static final int phone_intent=0x7f04001d;
+        public static final int preMain_Url=0x7f04001e;
         public static final int tab_contact_us_string=0x7f040016;
         public static final int tab_facebook_string=0x7f040015;
         public static final int tab_now_playing_string=0x7f040011;
