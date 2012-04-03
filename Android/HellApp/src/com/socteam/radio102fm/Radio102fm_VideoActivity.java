@@ -63,7 +63,8 @@ public class Radio102fm_VideoActivity extends Activity
 				{
 					// Remove the banner image
 					
-					bannerView.setVisibility(View.GONE);
+					bannerView.setImageBitmap(Radio102fm_MainActivity.ServerAPI
+							.getImage(getString(R.string.video_sideImage)));
 					
 					// Set the buffer thread to show the buffering msg
 					m_bufferThread = new Runnable() {
@@ -80,16 +81,7 @@ public class Radio102fm_VideoActivity extends Activity
 									if (m_pd == null)
 									{
 										m_pd = ProgressDialog.show(Radio102fm_VideoActivity.this,
-												"", "Buffering...", true, true,
-												new OnCancelListener() {
-													
-													@Override
-													public void onCancel(DialogInterface arg0)
-													{
-														onDestroy();
-													}
-													
-												});
+												"", "Buffering...", true, false);
 									}
 								}
 								else
