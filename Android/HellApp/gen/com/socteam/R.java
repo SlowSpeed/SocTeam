@@ -163,6 +163,7 @@ public final class R {
         public static final int NO=0x7f04001a;
         public static final int OK=0x7f040018;
         public static final int SetInBackgroundTextString=0x7f040003;
+        public static final int WITH=0x7f040020;
         public static final int YES=0x7f040019;
         public static final int about_url=0x7f04001b;
         public static final int api_appActivation=0x7f040008;
@@ -191,6 +192,7 @@ public final class R {
         public static final int tab_program_list_string=0x7f040013;
         public static final int tab_youtube_string=0x7f040014;
         public static final int terms_url=0x7f04001c;
+        public static final int video_sideImage=0x7f04001f;
     }
     public static final class style {
         public static final int ContactHeadlineStyle=0x7f050011;

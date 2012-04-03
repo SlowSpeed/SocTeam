@@ -30,10 +30,7 @@
 	<string name="about_url">http://andro.mediacast.co.il/about_us/1002-2.html</string>
 	<string name="terms_url">http://andro.mediacast.co.il/about_us/1002.html</string>
 	<string name="phone_intent">tel:1900720102</string>
-<<<<<<< HEAD
 	<string name="preMain_Url">http://web1.mediacast.co.il/loader/loading.html</string>
-=======
 	<string name="video_sideImage">http://andro.mediacast.co.il/images/over.png</string>
 	<string name="WITH">עם</string>
->>>>>>> ed0d3e29746ce96687723b54cf4aaa293a08ffee
 </resources>
