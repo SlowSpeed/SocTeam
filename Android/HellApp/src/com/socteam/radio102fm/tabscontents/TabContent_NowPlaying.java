@@ -174,10 +174,13 @@ public final class TabContent_NowPlaying
 				if (Radio102fm_MainActivity.ServerAPI != null)
 				{
 					RadioProgram prog = Radio102fm_MainActivity.ServerAPI.getCurrentProgram();
-					((TextView) nowPlayingTabContent.findViewById(R.id.nowPlaying_programName))
-							.setText(prog.getName());
-					((TextView) nowPlayingTabContent.findViewById(R.id.nowPlaying_programWith))
-							.setText(prog.getBroadcaster());
+					if (prog != null)
+					{
+						((TextView) nowPlayingTabContent.findViewById(R.id.nowPlaying_programName))
+								.setText(prog.getName());
+						((TextView) nowPlayingTabContent.findViewById(R.id.nowPlaying_programWith))
+								.setText(prog.getBroadcaster());
+					}
 					
 					activity.UIHandler.postDelayed(this, s_nowPlayingTextRefreshTime);
 				}
