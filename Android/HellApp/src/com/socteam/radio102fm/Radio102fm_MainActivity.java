@@ -52,7 +52,7 @@ public class Radio102fm_MainActivity extends Activity
 			{
 				Init();
 			}
-		}, 500);
+		}, 4000);
 	}
 	
 	public void Init()
@@ -135,7 +135,6 @@ public class Radio102fm_MainActivity extends Activity
 		if (keyCode != KeyEvent.KEYCODE_MENU) return super.onKeyDown(keyCode, event);
 		
 		AlertDialog.Builder alertBox = new AlertDialog.Builder(this);
-		alertBox.setTitle(R.string.about_url);
 		
 		WebView webTabBrowser = new WebView(this);
 		webTabBrowser.setWebViewClient(new WebViewClient());
