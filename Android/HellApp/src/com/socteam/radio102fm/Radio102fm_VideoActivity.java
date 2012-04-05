@@ -62,9 +62,11 @@ public class Radio102fm_VideoActivity extends Activity
 				public void run()
 				{
 					// Remove the banner image
-					
+					// and set the image to show during the streaming video
+					// also removed the on click action
 					bannerView.setImageBitmap(Radio102fm_MainActivity.ServerAPI
 							.getImage(getString(R.string.video_sideImage)));
+					bannerView.setOnClickListener(null);
 					
 					// Set the buffer thread to show the buffering msg
 					m_bufferThread = new Runnable() {
